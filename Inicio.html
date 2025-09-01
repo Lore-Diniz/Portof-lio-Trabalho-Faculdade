@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- CSS externo -->
+    <title>Lorenna Diniz | Portfólio</title>
+</head>
+<body>
+    <!-- Fundo animado em Matrix -->
+    <canvas id="matrix"></canvas>
+    <script src="matrix.js"></script> <!-- JavaScript da animação -->
+
+    <!-- Navegação principal -->
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre Mim</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cabeçalho / Apresentação -->
+    <main id="inicio" class="cabecalho">
+        <img src="./lore.jpeg" alt="Foto de Lorenna Diniz" class="foto-perfil">
+        <h1>Lorenna Diniz</h1>
+        <p class="cabecalho-titulo">Desenvolvedora Back-End</p>
+    </main>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou desenvolvedora back-end com experiência em HTML, CSS, JavaScript e Python, além de conhecimentos em cloud computing. 
+                Gosto de transformar ideias em soluções funcionais, buscando sempre código organizado, desempenho e escalabilidade.
+            </p>
+            <br>
+            <p class="sobre-paragrafo">
+                Formação acadêmica: Tecnóloga em Análise e Desenvolvimento de Sistemas.  
+                Idiomas: Inglês intermediário.  
+                Hobbies: Ler, tocar violão e explorar novas tecnologias.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Projetos / Portfólio -->
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <!-- Projeto Python -->
+            <a href="https://github.com/Lore-Diniz/Calculadora-Python/blob/main/calculadora.py" target="_blank" class="projeto-link">
+                <div class="projetos-feitos">
+                    <img src="./python.png" alt="Projeto Loja de Camisetas em Python" class="projetos-imagem">
+                    <h3 class="info-projeto">Loja de Camisetas em Python</h3>
+                    <p class="paragrafo-projeto">Loja Virtual desenvolvida em Python</p>
+                </div>
+            </a>
+
+            <!-- Projeto Front-End -->
+            <a href="https://github.com/Lore-Diniz/Projeto-L-mpada-JS" target="_blank" class="projeto-link">
+                <div class="projetos-feitos">
+                    <img src="./front.jpg" alt="Projeto formulário-contato" class="projetos-imagem">
+                    <h3 class="info-projeto">Projeto Front-End</h3>
+                    <p class="paragrafo-projeto">Animação com HTML, CSS e JavaScript</p>
+                </div>
+            </a>
+
+            <!-- Projeto SQL -->
+            <a href="https://github.com/Lore-Diniz/Banco-de-Dados---SQL---Faculdade/blob/main/README.md?plain=1" target="_blank" class="projeto-link">
+                <div class="projetos-feitos">
+                    <img src="./sql.png" alt="Projeto Banco de Dados Locadora" class="projetos-imagem">
+                    <h3 class="info-projeto">Projeto Banco de Dados de Locadora</h3>
+                    <p class="paragrafo-projeto">Banco de dados usando SQL e MySQL</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção Contatos -->
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Contatos</h2>
+        <form class="formulario-contato" id="formulario">
+            <!-- Campo Nome -->
+            <div class="nome-form">
+                <input type="text" name="nome" id="nome" placeholder="Nome" class="campo-form" required>
+            </div>
+
+            <!-- Campo Email -->
+            <div class="email-form">
+                <input type="email" name="email" id="email" placeholder="Email" class="campo-form" required>
+            </div>
+
+            <!-- Campo Mensagem -->
+            <div class="grupo-form">
+                <textarea name="mensagem" id="mensagem" class="text-form" placeholder="Digite sua mensagem" required></textarea>
+            </div>
+
+            <!-- Botão enviar -->
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>

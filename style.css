@@ -1,0 +1,284 @@
+/* * → reseta margens e paddings e define fonte padrão */
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+}
+
+/* #matrix → canvas de fundo animado */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* fica atrás do conteúdo */
+    width: 100%;
+    height: 100%;
+}
+
+/* html → comportamento de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* :root → define cores e variáveis globais */
+:root {
+    --primaria: #9e00ba;
+    --secundaria: #6200ad;
+    --escuro: #0f172a;
+    --bemescuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+/* body → cor de fundo e cor padrão do texto */
+body {
+    background-color: var(--escuro);
+    color: var(--claro);
+}
+
+/* .navegacao → barra de menu fixa no topo */
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem;
+}
+
+/* .menu → organiza links do menu horizontalmente */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+/* .menu-link → estiliza cada link do menu */
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+/* .menu-link::after → efeito de sublinhado animado nos links */
+.menu-link::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.5s ease;
+}
+
+/* .menu-link:hover::after → animação ao passar o mouse */
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* .cabecalho → seção inicial com apresentação e foto */
+.cabecalho {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .foto-perfil → estiliza a imagem do perfil */
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 20px rgba(79, 70, 22, 0.3);
+    border-radius: 50%;
+    border: 4px solid var(--vidro);
+}
+
+/* h1 → título principal */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: var(--primaria);
+    font-weight: bold;
+}
+
+/* .cabecalho-titulo → subtítulo abaixo do h1 */
+.cabecalho-titulo {
+    font-size: 1.5rem;
+    color: var(--claro);
+}
+
+/* .sobre → seção sobre mim */
+.sobre {
+    padding: 6rem 2rem;
+}
+
+/* .sobre-titulo → título da seção */
+.sobre-titulo {
+    font-size: 2rem;
+    color: var(--claro);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* .sobre-caixa → caixa com fundo translúcido e blur */
+.sobre-caixa {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* .sobre-paragrafo → texto centralizado */
+.sobre-paragrafo {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* .projetos → seção portfólio */
+.projetos {
+    padding: 6rem 2rem;
+}
+
+/* .projeto-link → link de cada projeto */
+.projeto-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* .projeto-link:hover → cor ao passar mouse */
+.projeto-link:hover {
+  color: #e2e8f0;
+}
+
+/* .projetos-feitos → cartão de cada projeto */
+.projetos-feitos {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+/* .projetos-titulo → título da seção de projetos */
+.projetos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* .projetos-feitos:hover → efeito hover de elevação e zoom */
+.projetos-feitos:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* .projetos-imagem → imagem do projeto */
+.projetos-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* .info-projeto → nome do projeto */
+.info-projeto {
+    margin-bottom: 5px;
+}
+
+/* .projetos-caixa → grid responsivo dos projetos */
+.projetos-caixa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+}
+
+/* .caixa-texto-projeto → descrição dentro do projeto */
+.caixa-texto-projeto {
+    padding: 1.5rem;
+}
+
+/* .paragrafo-projeto → texto do projeto */
+.paragrafo-projeto {
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.25rem;
+}
+
+/* .contatos-titulo → título centralizado da seção de contatos */
+.contatos-titulo {
+    text-align: center;  
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* .formulario-contato → estiliza todo o formulário de contato */
+.formulario-contato {
+    max-width: 500px;       
+    margin: 0 auto;         
+    padding: 20px;
+    background-color: var(--vidro);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* .campo-form → campos de texto do formulário (nome e email) */
+.campo-form {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* .text-form → textarea da mensagem */
+.text-form {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical; 
+    outline: none;
+    transition: 0.3s;
+}
+
+/* .campo-form:focus, .text-form:focus → efeito visual ao focar no campo */
+.campo-form:focus,
+.text-form:focus {
+    border-color: #8A2BE2;
+    box-shadow: 0 0 5px #8A2BE2;
+}
+
+/* .btn-enviar → botão de enviar mensagem */
+.btn-enviar {
+    width: 100%;
+    padding: 12px;
+    background-color: #8A2BE2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* .btn-enviar:hover → efeito hover no botão */
+.btn-enviar:hover {
+    background-color: #5d1a9b;
+}
